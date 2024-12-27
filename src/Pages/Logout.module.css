@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Modal CSS */
+
+.add_modal_form {
+  border-radius: var(--16px, 16px);
+  background: #fff;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 51%;
+  display: flex;
+  width: 522px;
+  padding: var(--24px, 24px);
+  flex-direction: column;
+  box-shadow: 24;
+  border: none;
+  gap: 24px;
+}
+
+.add_modal_head_title {
+  color: var(--Text-Black, #080f1a);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  font-family: Outfit, sans-serif;
+}
+
+.add_modal_field {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal_close {
+  color: #647491;
+  display: flex;
+  width: 27px;
+  height: 27px;
+  padding: 8.25px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  border-radius: 14px;
+  border: 1px solid var(--Background-White, #fff);
+  background: var(--Background-White, #fff);
+  box-shadow: 0px 163px 46px 0px rgba(191, 191, 191, 0),
+    0px 104px 42px 0px rgba(191, 191, 191, 0.01),
+    0px 59px 35px 0px rgba(191, 191, 191, 0.05),
+    0px 26px 26px 0px rgba(191, 191, 191, 0.09),
+    0px 7px 14px 0px rgba(191, 191, 191, 0.1);
+  cursor: pointer;
+}
+
+.add_modal_btn {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--8px, 8px);
+  align-self: stretch;
+  cursor: pointer;
+}
+
+.active_actions {
+  display: flex;
+  flex-direction: row !important;
+  gap: 8px;
+}
+
+.active {
+  color: var(--Text-Black, #080f1a);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row !important;
+  gap: 8px;
+}
+
+.buttons_cancel {
+  display: flex;
+  height: 40px;
+  padding: var(--Spacing-0px, 0px) var(--16px, 16px);
+  justify-content: center;
+  align-items: center;
+  gap: var(--8px, 8px);
+  border-radius: var(--4px, 4px);
+  border: 1px solid var(--Primary-Default, #0566ff);
+  color: var(--Primary-Default, #0566ff);
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  cursor: pointer;
+  font-family: Outfit, sans-serif;
+}
+
+.buttons_save {
+  display: flex;
+  height: 40px;
+  padding: var(--Spacing-0px, 0px) var(--16px, 16px);
+  justify-content: center;
+  align-items: center;
+  gap: var(--8px, 8px);
+  border-radius: var(--4px, 4px);
+  background: var(--Primary-Default, #0566ff);
+  color: var(--White, #fff);
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  cursor: pointer;
+  font-family: Outfit, sans-serif;
+}
+.add_modal_head_Avatar {
+  width: "20%";
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+
+.delete_Cancel {
+  display: flex;
+  height: 2.5rem;
+  padding: var(--Spacing-0rem, 0rem) var(--1rem, 1rem);
+  justify-content: center;
+  align-items: center;
+  gap: var(--0.5rem, 0.5rem);
+  color: var(--Primary-Default, #0566ff);
+  text-align: center;
+  border-radius: var(--4px, 4px);
+  border: 1px solid var(--Primary-Default, #0566ff);
+  /* Links/Btn Text */
+  font-family: Outfit, sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  /* 1.3125rem */
+  cursor: pointer;
+}
