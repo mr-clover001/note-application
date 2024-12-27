@@ -62,12 +62,10 @@ const NoteList: React.FC<NoteListProps> = ({
     const date = new Date(isoString);
 
     const day = date.getDate();
-    const month = date.toLocaleString("default", { month: "short" }); // "Dec"
+    const month = date.toLocaleString("default", { month: "short" }); //
     const year = date.getFullYear();
-
-    // Convert to 12-hour format
-    const hours = date.getHours() % 12 || 12; // Convert 0 to 12
-    const minutes = date.getMinutes().toString().padStart(2, "0"); // Ensure 2-digit format
+    const hours = date.getHours() % 12 || 12;
+    const minutes = date.getMinutes().toString().padStart(2, "0");
     const amPm = date.getHours() >= 12 ? "PM" : "AM";
 
     return `${hours}:${minutes} ${amPm} (${day} ${month} ${year})   `;
@@ -117,16 +115,10 @@ const NoteList: React.FC<NoteListProps> = ({
               {" "}
               <p>{formatDate(note?.createdAt)}</p>
             </Stack>
-            {/* <button
-              onClick={() => note.id && onEdit(note.id)} // Only call onEdit if id is defined
-              // disabled={!note.id} // Disable button if id is undefined
-            >
-              Edit
-            </button> */}
-            {/* <button onClick={() => onDelete(note?.id)}>Delete</button> */}
           </Stack>
         ))}
       </Box>
+
       {/* MODAL for Delete the notes */}
       <Modal
         open={deleteModal}
