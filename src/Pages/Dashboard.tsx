@@ -135,7 +135,7 @@ const Dashboard: React.FC<LogoutProps> = ({ handleLogout }) => {
   const [selectedOption, setSelectedOption] = useState(0);
   useEffect(() => {
     loadNotes();
-  }, [token]);
+  }, [token,loadNotes]);
   const loadNotes = async () => {
     try {
       if (!token) {
