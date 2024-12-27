@@ -44,7 +44,7 @@ const Register: React.FC = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState({ secret: "", show: false });
-  const [error, setError] = useState<string>("");
+  
   const navigate = useNavigate();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,7 +62,7 @@ const Register: React.FC = () => {
       console.log(response.data);
       toast.success("Registration successful! Please log in.");
     } catch (err) {
-      setError("Error during registration");
+ 
       toast.error("Error during registration");
     }
   };
