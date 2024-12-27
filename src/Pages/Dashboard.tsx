@@ -133,9 +133,7 @@ const Dashboard: React.FC<LogoutProps> = ({ handleLogout }) => {
   const token = localStorage.getItem("token");
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [selectedOption, setSelectedOption] = useState(0);
-  useEffect(() => {
-    loadNotes();
-  }, [token,loadNotes]);
+
   const loadNotes = async () => {
     try {
       if (!token) {
@@ -159,6 +157,10 @@ const Dashboard: React.FC<LogoutProps> = ({ handleLogout }) => {
       setLoading(false);
     }
   };
+  useEffect(() => {
+    loadNotes();
+  }, [token]);
+
   const handleAddNote = async (noteData: {
     title: string;
     content: string;
@@ -264,7 +266,7 @@ const Dashboard: React.FC<LogoutProps> = ({ handleLogout }) => {
         {/* Desktop */}
         <Box
           className={Styles.dashboard_head}
-          bgcolor={isDarkMode ? "#1E3E62" : "#fff"}
+          bgcolor={isDarkMode ? "#1E3E62" : "#F8FAFC"}
           sx={{ display: { xs: "none", md: "flex" } }}
         >
           <Stack
@@ -399,7 +401,7 @@ const Dashboard: React.FC<LogoutProps> = ({ handleLogout }) => {
         {/* Section */}
         <Stack
           className={Styles.dashboard_section}
-          bgcolor={isDarkMode ? "#ebedf03f" : ""}
+          bgcolor={isDarkMode ? "#e4e5f1" : "#F2F9FF"}
           height={"92vh"}
         >
           <Stack className={Styles.active_user_layout}>
