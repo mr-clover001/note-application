@@ -63,7 +63,7 @@ const Login: React.FC<LoginProps> = ({ handleLogin }) => {
 
     try {
       const response = await axios.post<LoginResponse>(
-        "http://localhost:9000/api/users/login",
+        "https://note-application-backend-xa1l.onrender.com/api/users/login",
         { email, password: password.secret }
       );
       console.log(response);
