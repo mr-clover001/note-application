@@ -12,6 +12,7 @@ import {
   TextField,
   ThemeProvider,
   Button,
+  Alert,
 } from "@mui/material";
 import LoginWallpaper from "./../Assest/LoginWallpaper.svg";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
@@ -44,7 +45,7 @@ const Register: React.FC = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState({ secret: "", show: false });
-  
+  const [isAccountCreated, setIsAccountCreated] = useState(false);
   const navigate = useNavigate();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -59,10 +60,15 @@ const Register: React.FC = () => {
         }
       );
 
-      console.log(response.data);
-      toast.success("Registration successful! Please log in.");
+      // console.log(response.data);
+      if (response.data) {
+        setIsAccountCreated(true);
+        setName("");
+        setEmail("");
+        setPassword({ secret: "", show: false });
+        toast.success("Registration successful! Please log in.");
+      }
     } catch (err) {
- 
       toast.error("Error during registration");
     }
   };
@@ -237,20 +243,9 @@ const Register: React.FC = () => {
         </Stack>
 
         <Stack width={"100%"} marginTop={"34px"}>
-          <Button
-            variant="contained"
-            fullWidth
-            sx={{
-              backgroundColor: "#0566FF",
-              padding: "12px",
-              borderRadius: "4px",
-              color: "#fff",
-              fontSize: "14px",
-            }}
-            onClick={handleSubmit}
-          >
+          <button className={styles.login_btn} onClick={handleSubmit}>
             Register
-          </Button>
+          </button>
         </Stack>
 
         <Stack className={styles.admincontact}>
@@ -264,6 +259,13 @@ const Register: React.FC = () => {
             Login
           </span>
         </Stack>
+        {isAccountCreated && (
+          <Stack marginTop={"20px"}>
+            <Alert severity="success">
+              Your account is created successfully.
+            </Alert>
+          </Stack>
+        )}
       </Box>
 
       <Box className={styles.login_footer}>
