@@ -5,7 +5,7 @@ export interface UserProfile {
   email: string;
   password?: string; 
 }
-const API_URL = 'http://localhost:9000/api/users/profile'; 
+const API_URL = 'https://note-application-backend-xa1l.onrender.com/api/users/profile'; 
 
 export const updateProfile = async (
   token: string,
