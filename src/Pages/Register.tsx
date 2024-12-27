@@ -51,7 +51,7 @@ const Register: React.FC = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:9000/api/users/register",
+        "https://note-application-backend-xa1l.onrender.com/api/users/register",
         {
           name,
           email,
