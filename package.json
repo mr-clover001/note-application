@@ -23,9 +23,7 @@
     "build": "vite build",       
   "build": "tsc && webpack",
   }, 
-  "engines": {
-    "node": "18.x"
-  },
+
   "eslintConfig": {
     "extends": [
       "react-app",
