@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Note } from '../type/interface';
 
 // Define the base URL for your API
-const API_URL = 'http://localhost:9000/api/notes'; // Adjust if your base path is different
+const API_URL = 'https://note-application-backend-xa1l.onrender.com/api/notes'; // Adjust if your base path is different
 
 // Fetch all notes
 export const fetchNotes = async (token: string) => {
@@ -25,7 +25,7 @@ export const createNote = async (
             Authorization: `Bearer ${token}`,
         },
     };
-    const response = await axios.post<Note>('http://localhost:9000/api/notes', noteData, config);
+    const response = await axios.post<Note>('https://note-application-backend-xa1l.onrender.com/api/notes', noteData, config);
     return response.data;
 };
 
@@ -40,7 +40,7 @@ export const updateNote = async (
             Authorization: `Bearer ${token}`,
         },
     };
-    const response = await axios.put<Note>(`http://localhost:9000/api/notes/${id}`, noteData, config);
+    const response = await axios.put<Note>(`https://note-application-backend-xa1l.onrender.com/api/notes/${id}`, noteData, config);
     return response.data;
 };
 
